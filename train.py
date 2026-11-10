@@ -5,7 +5,7 @@
 
 Writes runs/<date>/ with config.json, normalisation.npz, model.pth (best weights),
 model_last.pth (final weights). Use --dry-run to check the setup with one training step.
-Then run evaluate.py on the output folder.
+
 """
 
 import argparse

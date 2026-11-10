@@ -1,0 +1,32 @@
+# Configuration of the CSDI model for NGC 7469 (as used in the WP3 report).
+
+train:
+  epochs: 100
+  batch_size: 10
+  lr: 1.0e-4
+  itr_per_epoch: 2000        # mini-batches per epoch
+  valid_epoch_interval: 20   # validation every 20 epochs
+  max_valid_batches: 200     # 200 batches of 10 = 2000 validation galaxies
+  max_eval_batches: 300      # 300 batches of 10 = 3000 test galaxies
+
+diffusion:
+  layers: 8                  # residual blocks
+  channels: 128
+  nheads: 8
+  diffusion_embedding_dim: 128
+  beta_start: 0.0001
+  beta_end: 0.5
+  num_steps: 50
+  schedule: "quad"           # sqrt(beta) is linear in the step
+  eval_num_steps: 50         # DDIM steps at sampling time
+  eta: 0.6                   # DDIM randomness: 0 = deterministic, 1 = DDPM-like
+  ddim_sigma_fix: true       # DDIM update of Song et al. (2021), Eq. 12
+
+model:
+  timeemb: 128               # size of the wavelength embedding
+  featureemb: 32             # size of the feature embedding
+
+dataset:
+  data_dir: "data"                                  # folder with the two SED libraries
+  photometry_dir: "data/synthetic_photometry"       # output of make_synthetic_photometry.py
+  split_seed: 1

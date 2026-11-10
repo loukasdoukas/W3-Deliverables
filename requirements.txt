@@ -1,0 +1,7 @@
+torch>=2.1
+numpy>=1.26
+scipy
+pyyaml
+tqdm
+matplotlib
+linear-attention-transformer==0.19.1

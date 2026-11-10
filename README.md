@@ -87,13 +87,7 @@ They were made with the WP2 random SED generation approach:
 We tested the CYGNUS torus. The other three AGN torus models of the WP2 tool (Fritz06, SKIRTOR, Siebenmorgen)
 can be tested too: generate the libraries with the same format and set the file name pattern (`LIBRARY_PATTERN` in `csdi_sed/data.py`).
 
-The code looks for these file names in the data folder (`data/` by default). `AGN1` is the CYGNUS torus:
-
-```
-ngc7469_random_sampling_galaxies_AGN1_HOST1.npz
-ngc7469_random_sampling_galaxies_AGN1_HOST2.npz
-```
-
+The code looks for these file names in the data folder (`data/` by default).
 Each file needs the keys `wave` (223 rest-frame wavelengths in micron), `flux` (N x 223, F_nu) and `redshift` (N).
 
 ### Steps
